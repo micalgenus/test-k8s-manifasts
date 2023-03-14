@@ -175,9 +175,12 @@ spec:
       - enabled: false
         name: istio-ingressgateway
     pilot:
-      spec:
+      enabled: true
+      k8s:
         resources:
-          requests: {}
+          requests:
+            cpu: 50m
+            memory: 64Mi
   meshConfig:
     accessLogFile: /dev/stdout
     defaultConfig:
