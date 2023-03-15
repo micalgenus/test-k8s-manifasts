@@ -114,7 +114,8 @@ spec:
             - name: CALICO_DISABLE_FILE_LOGGING
               value: "true"
             - name: FELIX_DEFAULTENDPOINTTOHOSTACTION
-              value: RETURN
+              #value: RETURN
+              value: ACCEPT
             - name: FELIX_HEALTHHOST
               value: localhost
             - name: FELIX_IPTABLESBACKEND
@@ -160,6 +161,12 @@ spec:
             - name: FELIX_IGNORELOOSERPF
               value: "False"
             - name: CALICO_MANAGE_CNI
+              value: "true"
+            - name: FELIX_BPFDATAIFACEPATTERN
+              value: "^(en[opsx].*|eth1)"
+            - name: FELIX_BPFLOGLEVEL
+              value: "debug"
+            - name: FELIX_BPFKUBEPROXYENDPOINTSLICESENABLED
               value: "true"
           envFrom:
             - configMapRef:
