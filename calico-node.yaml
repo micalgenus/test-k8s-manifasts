@@ -162,8 +162,10 @@ spec:
               value: "False"
             - name: CALICO_MANAGE_CNI
               value: "true"
+            - name: FELIX_BPFENABLED
+              value: "true"
             - name: FELIX_BPFDATAIFACEPATTERN
-              value: "^(en[opsx].*|eth1)"
+              value: "^eth1$"
             - name: FELIX_BPFLOGLEVEL
               value: "debug"
             - name: FELIX_BPFKUBEPROXYENDPOINTSLICESENABLED

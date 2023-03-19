@@ -182,7 +182,7 @@ spec:
             cpu: 50m
             memory: 64Mi
   meshConfig:
-    accessLogFile: /dev/stdout
+    accessLogFile: ""
     defaultConfig:
       proxyMetadata:
         EXIT_ON_ZERO_ACTIVE_CONNECTIONS: 'true'
@@ -192,6 +192,8 @@ spec:
       proxy:
         holdApplicationUntilProxyStarts: true
         includeIPRanges: 10.0.0.0/8
+        excludeOutboundPorts: "15012"
+        includeInboundPorts: "8080"
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
