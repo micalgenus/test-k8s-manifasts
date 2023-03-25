@@ -21,7 +21,7 @@ spec:
   updateStrategy:
     rollingUpdate:
       maxSurge: 0
-      maxUnavailable: 25%
+      maxUnavailable: 100%
     type: RollingUpdate
   template:
     metadata:
@@ -29,7 +29,7 @@ spec:
         app: http
     spec:
       containers:
-        - image: ghcr.io/micalgenus/test-http-container:1.2.1
+        - image: ghcr.io/micalgenus/test-http-container:1.2.2
           imagePullPolicy: IfNotPresent
           name: http
           ports:
