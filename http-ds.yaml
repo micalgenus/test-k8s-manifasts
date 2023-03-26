@@ -36,6 +36,7 @@ spec:
             - containerPort: 8080
               name: http
               protocol: TCP
+              hostPort: 8088
           env:
             - name: POD_NAME
               valueFrom:
@@ -73,8 +74,9 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
+    nodePort: 31080
   selector:
     app: http
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
 
