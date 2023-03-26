@@ -62,6 +62,8 @@ spec:
       serviceAccount: default
       serviceAccountName: default
       terminationGracePeriodSeconds: 30
+      tolerations:
+      - operator: Exists
 ---
 apiVersion: v1
 kind: Service
